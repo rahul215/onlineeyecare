@@ -9,5 +9,7 @@ import com.google.common.base.Optional;
 public interface SignUpRepository extends JpaRepository<Signups, Integer>{
 
 	Optional<Signups>findByUsername(String username);
+	Optional<Signups>findByPassword(String password);
+
 
 }
