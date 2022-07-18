@@ -28,6 +28,22 @@ public class Converter {
 		
 		return reportDTO;
 	}
+	public Signups convertTOSignUpEntity(SignUpDTO signUpDTO) {
+		Signups signUp = new Signups();
+		if(signUpDTO != null) {
+			BeanUtils.copyProperties(signUpDTO, signUp);
+		}
+		return signUp;
+	}
+	
+	public SignUpDTO convertToSignUpDTO(Signups signUp) {
+		SignUpDTO signUpDTO = new SignUpDTO();
+		
+		if(signUpDTO != null) {
+			BeanUtils.copyProperties(signUp, signUpDTO);
+		}
+		return signUpDTO;
+	}
 	
 
 }
