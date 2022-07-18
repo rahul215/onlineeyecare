@@ -34,10 +34,15 @@ public class SignUpImpl implements SignUpService {
 		Converter converter = new Converter();
 		Signups signUp = converter.convertTOSignUpEntity(signUpDTO);
 		Optional<Signups> data = signUpRepository.findByUsername(signUpDTO.getUsername());
+		Optional<Signups> data1 = signUpRepository.findByPassword(signUpDTO.getPassword());
+		
 		
 		if(!data.isPresent()) {
 			throw new LoginUsernameDoesNotExistsException(" Username doesnot exists with : " + signUp.getUsername());
 		}
+		if(!data1.isPresent()) {
+				throw new WrongPasswordException(" Wrong Password entered for  : " + signUp.getUsername());
+			}
 		return "Successfully Logged In.....";
 	}
 }
