@@ -13,9 +13,9 @@ public interface ReportService {
 
 	public String removeReport(int reportId)throws ReportIdNotFoundException;
 
-	// We have to implement the patient id here which is missing as the integration is not done yet so I am skipping it right now
-	ReportDTO viewReport(int reportId /*, int patientId*/)throws ReportIdNotFoundException /*,PatientIdFoundNotException*/;
+	
+	ReportDTO viewReport(int reportId )throws ReportIdNotFoundException ;
 
-	//List<Spectacles>  viewSpetacles();
+	List<Spectacles>  viewSpetacles();
 
 }
